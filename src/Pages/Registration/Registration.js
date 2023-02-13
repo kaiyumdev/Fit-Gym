@@ -3,14 +3,25 @@ import { useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import auth from "./../../firebase.init";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+  useSendPasswordResetEmail,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import SocialMedia from "../SocialMedia/SocialMedia";
+import { sendEmailVerification } from "firebase/auth";
 
 const Registration = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+  const [updateProfile, updating, profileError] = useUpdateProfile(auth);
   const navigate = useNavigate();
+
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
 
   const nameRef = useRef("");
   const emailRef = useRef("");
@@ -25,15 +36,23 @@ const Registration = () => {
   if (loading) {
     return <p>Loading...</p>;
   }
+
   if (user) {
     navigate("/home");
   }
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
+    console.log(name);
+  };
+
+  const handlePasswordReset = async () => {
+    const email = emailRef.current.value;
+    await sendPasswordResetEmail(email);
   };
   return (
     <div className="w-50 mx-auto">
@@ -46,9 +65,6 @@ const Registration = () => {
             name="name"
             placeholder="Enter Name"
           />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" id="email">
           <Form.Label>Email address</Form.Label>
@@ -58,9 +74,6 @@ const Registration = () => {
             name="email"
             placeholder="Enter email"
           />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" id="password">
@@ -83,6 +96,22 @@ const Registration = () => {
         Already Register? <Link to={"/login"}>Please Login</Link>{" "}
       </p>
       <SocialMedia></SocialMedia>
+      <Button onClick={handlePasswordReset} variant="primary" type="submit">
+        Reset Password
+      </Button>
+      {/* <button
+        onClick={async () => {
+          const success = await sendPasswordResetEmail(
+            email,
+            actionCodeSettings
+          );
+          if (success) {
+            alert('Sent email');
+          }
+        }}
+      >
+        Reset password
+      </button> */}
     </div>
   );
 };

@@ -6,8 +6,8 @@ import auth from "./../../firebase.init";
 const PrivateRoute = ({ children }) => {
   const location = useLocation();
   const [user, loading, error] = useAuthState(auth);
-//   let auth = useAuth();
-//   let location = useLocation();
+  //   let auth = useAuth();
+  //   let location = useLocation();
   if (error) {
     return (
       <div>
@@ -18,9 +18,7 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return <p>Loading...</p>;
   }
-  if (!auth?.user) {
-    console.log("Please", auth.user)
-    // not logged in so redirect to login page with the return url
+  if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 const CheckOut = () => {
   const { checkOutId } = useParams();
+  console.log('clicked', checkOutId);
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>CheckOut ID: {checkOutId}</h1>

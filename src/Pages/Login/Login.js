@@ -9,10 +9,9 @@ import auth from "./../../firebase.init";
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  // console.log(user);
   let location = useLocation();
-  let from = location.state?.from?.pathname || "/";
-  const navigate = useNavigate()
+  let from = location.state?.from?.pathname || "/checkout";
+  const navigate = useNavigate();
 
   const emailRef = useRef("");
   const passwordRef = useRef("");
