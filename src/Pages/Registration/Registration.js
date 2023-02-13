@@ -12,16 +12,12 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import SocialMedia from "../SocialMedia/SocialMedia";
 import { sendEmailVerification } from "firebase/auth";
-
 const Registration = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile, updating, profileError] = useUpdateProfile(auth);
   const navigate = useNavigate();
-
-  const [sendPasswordResetEmail, sending, resetError] =
-    useSendPasswordResetEmail(auth);
 
   const nameRef = useRef("");
   const emailRef = useRef("");
@@ -50,10 +46,6 @@ const Registration = () => {
     console.log(name);
   };
 
-  const handlePasswordReset = async () => {
-    const email = emailRef.current.value;
-    await sendPasswordResetEmail(email);
-  };
   return (
     <div className="w-50 mx-auto">
       <Form onSubmit={handleRegister}>
@@ -96,22 +88,6 @@ const Registration = () => {
         Already Register? <Link to={"/login"}>Please Login</Link>{" "}
       </p>
       <SocialMedia></SocialMedia>
-      <Button onClick={handlePasswordReset} variant="primary" type="submit">
-        Reset Password
-      </Button>
-      {/* <button
-        onClick={async () => {
-          const success = await sendPasswordResetEmail(
-            email,
-            actionCodeSettings
-          );
-          if (success) {
-            alert('Sent email');
-          }
-        }}
-      >
-        Reset password
-      </button> */}
     </div>
   );
 };

@@ -1,15 +1,23 @@
 import React, { useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialMedia from "../SocialMedia/SocialMedia";
 import auth from "./../../firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   let location = useLocation();
+
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
   let from = location.state?.from?.pathname || "/checkout";
   const navigate = useNavigate();
 
@@ -34,6 +42,12 @@ const Login = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     signInWithEmailAndPassword(email, password);
+  };
+
+  const handlePasswordReset = async () => {
+    const email = emailRef.current.value;
+    await sendPasswordResetEmail(email);
+    toast("Send Reset Password!");
   };
 
   return (
@@ -63,9 +77,16 @@ const Login = () => {
         </Button>
       </Form>
       <p>
-        NeW to Fit-Gym <Link to={"/registration"}>Please Register</Link>{" "}
+        NeW to Fit-Gym <Link to={"/registration"}>Please Register</Link>
+      </p>
+      <p>
+        Forget Password
+        <Button onClick={handlePasswordReset} variant="primary" type="submit">
+          Reset Password
+        </Button>
       </p>
       <SocialMedia></SocialMedia>
+      <ToastContainer />
     </div>
   );
 };
