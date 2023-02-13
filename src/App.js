@@ -7,10 +7,10 @@ import Login from "./Pages/Login/Login";
 import Services from "./Pages/Services/Services";
 import Registration from "./Pages/Registration/Registration";
 import Service from "./Pages/Service/Service";
-import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
 import NotFound from "./Pages/NotFound/NotFound";
 import Blogs from "./Pages/Blogs/Blogs";
 import About from "./Pages/About/About";
+import CheckOut from "./Pages/CheckOut/CheckOut";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,8 +23,8 @@ function App() {
         // {path:"/services", element:<Services></Services>},
         { path: "/service", element: <Service></Service> },
         {
-          path: "/service/:serviceId",
-          element: <ServiceDetail></ServiceDetail>,
+          path: "/service/:checkOutId",
+          element: <CheckOut></CheckOut>,
         },
         { path: "/login", element: <Login></Login> },
         { path: "/registration", element: <Registration></Registration> },

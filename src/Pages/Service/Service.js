@@ -3,12 +3,12 @@ import "./Service.css";
 import { useNavigate } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 
-const ServiceDetail = ({ service }) => {
+const Service = ({ service }) => {
   const { id, name, img, price, description } = service;
   const navigate = useNavigate();
 
-  const navigateServiceDetail = (id) => {
-    navigate(`/service/${id}`);
+  const navigateServiceDetail = (checkOutId) => {
+    navigate(`/service/${checkOutId}`);
   };
   return (
     <div className="container">
@@ -29,4 +29,4 @@ const ServiceDetail = ({ service }) => {
   );
 };
 
-export default ServiceDetail;
+export default Service;
