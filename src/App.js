@@ -11,6 +11,7 @@ import NotFound from "./Pages/NotFound/NotFound";
 import Blogs from "./Pages/Blogs/Blogs";
 import About from "./Pages/About/About";
 import CheckOut from "./Pages/CheckOut/CheckOut";
+import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 
 function App() {
   const router = createBrowserRouter([
@@ -24,7 +25,11 @@ function App() {
         { path: "/service", element: <Service></Service> },
         {
           path: "/service/:checkOutId",
-          element: <CheckOut></CheckOut>,
+          element: (
+            <PrivateRoute>
+              <CheckOut></CheckOut>
+            </PrivateRoute>
+          ),
         },
         { path: "/login", element: <Login></Login> },
         { path: "/registration", element: <Registration></Registration> },

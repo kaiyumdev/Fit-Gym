@@ -25,11 +25,10 @@ const Header = () => {
         </div>
         <div className="nav">
           <Link to={"/registration"}>Registration</Link>
-          {/* <Link style={{color:'red'}} to={"/login"}></Link> */}
           {user ? (
             <button onClick={handleLogOut}>Log Out</button>
           ) : (
-            <Link to={"/login"}></Link>
+            <Link to={"/login"}>Login</Link>
           )}
         </div>
       </nav>

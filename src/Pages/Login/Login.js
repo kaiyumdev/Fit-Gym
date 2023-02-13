@@ -2,14 +2,17 @@ import React, { useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialMedia from "../SocialMedia/SocialMedia";
 import auth from "./../../firebase.init";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  console.log(user);
+  // console.log(user);
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate()
 
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -25,11 +28,7 @@ const Login = () => {
     return <p>Loading...</p>;
   }
   if (user) {
-    return (
-      <div>
-        <p>Signed In User: {user.user.email}</p>
-      </div>
-    );
+    navigate(from, { replace: true });
   }
   const handleLogin = (e) => {
     e.preventDefault();

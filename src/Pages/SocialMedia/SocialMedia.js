@@ -4,7 +4,7 @@ import "./SocialMedia.css";
 import auth from "./../../firebase.init";
 const SocialMedia = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  console.log(user)
+//   console.log(user)
   if (error) {
     return (
       <div>
