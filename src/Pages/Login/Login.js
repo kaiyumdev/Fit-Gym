@@ -3,12 +3,13 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import SocialMedia from "../SocialMedia/SocialMedia";
 import auth from "./../../firebase.init";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-    console.log(user)
+  console.log(user);
 
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -50,7 +51,11 @@ const Login = () => {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control  ref={passwordRef} type="password" placeholder="Password" />
+          <Form.Control
+            ref={passwordRef}
+            type="password"
+            placeholder="Password"
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
@@ -59,7 +64,10 @@ const Login = () => {
           Submit
         </Button>
       </Form>
-      <p>NeW to Fit-Gym <Link to={"/registration"}>Please Register</Link> </p>
+      <p>
+        NeW to Fit-Gym <Link to={"/registration"}>Please Register</Link>{" "}
+      </p>
+      <SocialMedia></SocialMedia>
     </div>
   );
 };

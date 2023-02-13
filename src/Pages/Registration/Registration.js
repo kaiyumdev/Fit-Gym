@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import auth from "./../../firebase.init";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import SocialMedia from "../SocialMedia/SocialMedia";
 
 const Registration = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -81,6 +82,7 @@ const Registration = () => {
       <p>
         Already Register? <Link to={"/login"}>Please Login</Link>{" "}
       </p>
+      <SocialMedia></SocialMedia>
     </div>
   );
 };

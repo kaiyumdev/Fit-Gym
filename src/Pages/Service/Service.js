@@ -12,9 +12,9 @@ const ServiceDetail = ({ service }) => {
   };
   return (
     <div className="container">
-      <div id="service" className="service ">
+      <div id="service" className="service" gap={3}>
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={img} />
+          <Card.Img variant="top" width={400} src={img} />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Text>{description}</Card.Text>
