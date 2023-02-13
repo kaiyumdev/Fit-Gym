@@ -1,17 +1,17 @@
 import React from "react";
-import './Header.css';
+import "./Header.css";
 import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
-import auth from './../../firebase.init';
-import { Button } from 'react-bootstrap/Button';
+import auth from "./../../firebase.init";
+import { Button } from "react-bootstrap/Button";
 import { signOut } from "firebase/auth";
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
 
-  const handleLogOut = () =>{
+  const handleLogOut = () => {
     signOut(auth);
-  }
+  };
   return (
     <div>
       <nav className="navbar bg-dark sticky-top py-4">
@@ -20,11 +20,17 @@ const Header = () => {
           <Link to={"/home"}>Home</Link>
           <Link to="#Services">Services</Link>
           <Link to="#banner">Banner</Link>
+          <Link to={"/blogs"}>Blogs</Link>
+          <Link to={"/about"}>About</Link>
         </div>
         <div className="nav">
           <Link to={"/registration"}>Registration</Link>
           {/* <Link style={{color:'red'}} to={"/login"}></Link> */}
-         {user ? <button onClick={handleLogOut}>Log Out</button> : <Link to={"/login"}></Link>}
+          {user ? (
+            <button onClick={handleLogOut}>Log Out</button>
+          ) : (
+            <Link to={"/login"}></Link>
+          )}
         </div>
       </nav>
     </div>

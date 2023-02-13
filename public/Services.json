@@ -1,74 +1,44 @@
 [
-    {
-        "id": "1",
-        "name": "Intercepter 650cc",
-        "img": "https://i.postimg.cc/rsm6jryT/Intercepter-650.jpg",
-        "price": "650"
-    },
-    {
-        "id": "2",
-        "name": "Bullet 350cc",
-        "img": "https://i.postimg.cc/fWBDdwWZ/Bullet-350.webp",
-        "price": "350"
-    },
-    {
-        "id": "3",
-        "name": "Bullet Tower Siker",
-        "img": "https://i.postimg.cc/kXLrNG0r/Bullet-Tower-Sikar.jpg",
-        "price": "350"
-    },
-    {
-        "id": "4",
-        "name": "Meteor Supermova",
-        "img": "https://i.postimg.cc/T27vwCQ3/Meteor-Supernova.jpg",
-        "price": "450"
-    },
-    {
-        "id": "5",
-        "name": "Cruiser 650cc",
-        "img": "https://i.postimg.cc/gJGbw7fn/Cruiser-650.jpg",
-        "price": "650"
-    },
-    {
-        "id": "6",
-        "name": "Twin-Cylinder 650",
-        "img": "https://i.postimg.cc/y8Kjzz9g/Twin-Cylinder-650.jpg",
-        "price": "650"
-    },
-    {
-        "id": "7",
-        "name": "Classic 150",
-        "img": "https://i.postimg.cc/GhtrJZ9D/Classic-150.jpg",
-        "price": "150"
-    },
-    {
-        "id": "8",
-        "name": "Classic 250",
-        "img": "https://i.postimg.cc/KzQStN2Q/Classic-250.jpg",
-        "price": "250"
-    },
-    {
-        "id": "9",
-        "name": "Classic 350",
-        "img": "https://i.postimg.cc/ZKQmfVyM/Classic-350.jpg",
-        "price": "350"
-    },
-    {
-        "id": "10",
-        "name": "Continantal 650",
-        "img": "https://i.postimg.cc/DwbTRLry/Continantal-650.jpg",
-        "price": "650"
-    },
-    {
-        "id": "11",
-        "name": "Sultan",
-        "img": "https://i.postimg.cc/fTVn0mgj/Sultan.jpg",
-        "price": "400"
-    },
-    {
-        "id": "12",
-        "name": "Classic 650",
-        "img": "https://i.postimg.cc/yNmz8KpM/Classic-650.jpg",
-        "price": "650"
-    }
+  {
+    "id": "1",
+    "name": "Wall Mounted Pull Up Chin Up Bar",
+    "img": "https://i.ibb.co/9V66QNN/Chin-Up-Bar.jpg",
+    "description": "About Iron Gym Wall Mount Pull Up Chin Up Bar. The Wall Mounted Pull Up Bar is the highest quality and most affordable wall mounted pull up bar available today.",
+    "price": "1416"
+  },
+  {
+    "id": "2",
+    "name": "Walking Stick",
+    "img": "https://i.ibb.co/KhqfCLX/Walking-Stick.jpg",
+    "description": "Product details of Motorized treadmill 2.0hp with free massager - Walking Stick. Installation Fee and Service Charge 1000 Taka for Inside Dhaka Only",
+    "price": "33,300"
+  },
+  {
+    "id": "3",
+    "name": "Body Press Wall Mounted Pull Up",
+    "img": "https://i.ibb.co/ZHhVBtv/Body-Press-Wall-Mounted-Pull-Up.jpg",
+    "description": "UPGRADE YOUR WORKOUTS: The top rated Wall Mount Pull Up Bar by Ultimate Body Press is ultra stable for strenuous, full-focus workouts",
+    "price": "350"
+  },
+  {
+    "id": "4",
+    "name": "Door Pull Up Bar",
+    "img": "https://i.ibb.co/DQwW9h8/Door-Pull-Up-Bar.jpg",
+    "description": "Ally Peaks Pull Up Bar for Doorway | Thickened Steel Max Limit 440 lbs Upper Body Fitness Workout Bar| Multi-Grip Strength for Doorway ",
+    "price": "2540"
+  },
+  {
+    "id": "5",
+    "name": "Hand Grip",
+    "img": "https://i.ibb.co/487GkD7/Hand-Grip.jpg",
+    "description": "Spring Tummy Trimmer Chest Expander Hand Gripper Pull Up Bars 3 in 1 Home Fitness Equipment Muscle Adjustable Training Gym Exercise Equipment",
+    "price": "650"
+  },
+  {
+    "id": "6",
+    "name": " Trimmer Double Spring ",
+    "img": "https://i.ibb.co/NsYySc6/Trimmer-Double-Spring.jpg",
+    "description": "With tummy trimmer double spring allows you to reduce fat and change your body shape, Can be extended from 50 cm in length to 165 cm",
+    "price": "450"
+  }
 ]

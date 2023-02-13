@@ -1,34 +1,39 @@
-import { Children } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './App.css';
-import Main from './Layout/Main';
-import Home from './Pages/Home/Home';
-import Login from './Pages/Login/Login';
-import Services from './Pages/Services/Services';
-import Registration from './Pages/Registration/Registration';
-import Service from './Pages/Service/Service';
-import ServiceDetail from './Pages/ServiceDetail/ServiceDetail';
-import NotFound from './Pages/NotFound/NotFound';
-
-
+import { Children } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import Main from "./Layout/Main";
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login/Login";
+import Services from "./Pages/Services/Services";
+import Registration from "./Pages/Registration/Registration";
+import Service from "./Pages/Service/Service";
+import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
+import NotFound from "./Pages/NotFound/NotFound";
+import Blogs from "./Pages/Blogs/Blogs";
+import About from "./Pages/About/About";
 
 function App() {
   const router = createBrowserRouter([
     {
-      path:"/",
-      element:<Main></Main>, 
+      path: "/",
+      element: <Main></Main>,
       children: [
-        {path:"/", element:<Home></Home>},
-        {path:"/home", element:<Home></Home>},
+        { path: "/", element: <Home></Home> },
+        { path: "/home", element: <Home></Home> },
         // {path:"/services", element:<Services></Services>},
-        {path:"/service", element:<Service></Service>},
-        {path:"/service/:serviceId", element:<ServiceDetail></ServiceDetail>},
-        {path:"/login", element:<Login></Login>},
-        {path:"/registration", element:<Registration></Registration>},
-        {path:"*", element:<NotFound></NotFound>}
+        { path: "/service", element: <Service></Service> },
+        {
+          path: "/service/:serviceId",
+          element: <ServiceDetail></ServiceDetail>,
+        },
+        { path: "/login", element: <Login></Login> },
+        { path: "/registration", element: <Registration></Registration> },
+        { path: "/blogs", element: <Blogs></Blogs> },
+        { path: "/about", element: <About></About> },
+        { path: "*", element: <NotFound></NotFound> },
       ],
     },
-  ])
+  ]);
 
   return (
     <div>
