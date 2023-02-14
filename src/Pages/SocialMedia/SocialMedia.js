@@ -15,22 +15,10 @@ const SocialMedia = () => {
   if (loading) {
     return <p>Loading...</p>;
   }
-  if (user) {
-    return (
-      <div>
-        <p>Signed In User: {user.email}</p>
-      </div>
-    );
-  }
   return (
     <div className="social-container">
-      <div
-        style={{ height: "10px", width: "20px", color: "red", padding: "5px" }}
-      ></div>
-      or
-      <div style={{ height: "1px" }}></div>
       <div className="login">
-        <button onClick={() => signInWithGoogle()}>Sign In</button>
+        <button  className="btn btn-outline-info" onClick={() => signInWithGoogle()}>Sign In with Google</button>
       </div>
     </div>
   );

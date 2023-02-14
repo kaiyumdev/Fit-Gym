@@ -56,9 +56,6 @@ const Login = () => {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -69,21 +66,25 @@ const Login = () => {
             placeholder="Password"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        <button type="submit" className="btn btn-outline-info">
           Submit
-        </Button>
+        </button>
       </Form>
       <p>
-        NeW to Fit-Gym <Link to={"/registration"}>Please Register</Link>
+        New to Fit-Gym ?{" "}
+        <Link className="btn btn-outline-info" to={"/registration"}>
+          Please Register
+        </Link>
       </p>
       <p>
-        Forget Password
-        <Button onClick={handlePasswordReset} variant="primary" type="submit">
+        Forget Password ?
+        <button
+          onClick={handlePasswordReset}
+          type="submit"
+          className="btn btn-outline-info"
+        >
           Reset Password
-        </Button>
+        </button>
       </p>
       <SocialMedia></SocialMedia>
       <ToastContainer />

@@ -1,5 +1,14 @@
 .services{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap:20px;
+    place-items: center;
+    border:10px solid red;
+    background-color: #d9d9d7;
+}
+
+@media only screen and (max-width: 600px){
+    .services{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

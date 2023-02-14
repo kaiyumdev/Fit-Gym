@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #1b1b1c;
+  color: #f8d499;
+  padding: 20px 5px;
+}
+@media only screen and (max-width: 600px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

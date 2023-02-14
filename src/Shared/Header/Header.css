@@ -1,9 +1,46 @@
-.navbar{
-    display: flex;
-    justify-content: space-around;
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #070707;
 }
-.nav a{
-    font-size: 25px;
-    margin-left: 10px;
-    text-decoration: none;
+.nav a {
+  font-size: 25px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #f8d499;
+}
+/* .gradient-button{ */
+
+         
+    .gradient-button {
+        background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%);
+        margin: 50px;
+        padding: 5px 20px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .btn-grad:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+      }
+     
+
+@media only screen and (max-width: 600px) {
+  /*Big smartphones [426px -> 600px]*/
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
 }

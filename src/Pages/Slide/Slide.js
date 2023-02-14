@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 const Slide = () => {
   return (
     <div id="banner">
-      <Carousel > 
+      <Carousel>
         <Carousel.Item>
           <img
             width={700}
@@ -14,8 +14,8 @@ const Slide = () => {
           />
           <Carousel.Caption>
             <img src="" alt="" />
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>400kg Dumbbell</h3>
+            <p>400kg Dumbbell is very important equipment fo gymnastic</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -28,8 +28,8 @@ const Slide = () => {
           />
 
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>100kg Dumbbell</h3>
+            <p>Dumbbell is very important equipment fo gymnastic</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -42,10 +42,8 @@ const Slide = () => {
           />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <h3>Bells of steel</h3>
+            <p>Bell of steel is very important equipment fo gymnastic</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

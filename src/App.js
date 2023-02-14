@@ -12,6 +12,7 @@ import Blogs from "./Pages/Blogs/Blogs";
 import About from "./Pages/About/About";
 import CheckOut from "./Pages/CheckOut/CheckOut";
 import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
+import Slide from "./Pages/Slide/Slide";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,8 +22,9 @@ function App() {
       children: [
         { path: "/", element: <Home></Home> },
         { path: "/home", element: <Home></Home> },
-        // {path:"/services", element:<Services></Services>},
+        { path: "/services", element: <Services></Services> },
         { path: "/service", element: <Service></Service> },
+        { path: "/banner", element: <Slide></Slide> },
         {
           path: "/service/:checkOutId",
           element: (
