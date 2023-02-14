@@ -10,6 +10,7 @@ import SocialMedia from "../SocialMedia/SocialMedia";
 import auth from "./../../firebase.init";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loading from "../../Shared/Loading/Loading";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -32,7 +33,7 @@ const Login = () => {
     );
   }
   if (loading) {
-    return <p>Loading...</p>;
+    return  <Loading></Loading>
   }
   if (user) {
     navigate(from, { replace: true });

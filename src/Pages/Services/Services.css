@@ -2,7 +2,6 @@
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
-    border:10px solid red;
     background-color: #d9d9d7;
 }
 

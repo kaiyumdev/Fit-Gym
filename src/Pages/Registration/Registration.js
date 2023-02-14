@@ -12,6 +12,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import SocialMedia from "../SocialMedia/SocialMedia";
 import { sendEmailVerification } from "firebase/auth";
+import Loading from "../../Shared/Loading/Loading";
 const Registration = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -30,7 +31,7 @@ const Registration = () => {
     );
   }
   if (loading) {
-    return <p>Loading...</p>;
+    return  <Loading></Loading>
   }
 
   if (user) {
