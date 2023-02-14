@@ -2,8 +2,8 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 const Slide = () => {
   return (
-    <div >
-      <Carousel id="banner"> 
+    <div id="banner">
+      <Carousel > 
         <Carousel.Item>
           <img
             width={700}

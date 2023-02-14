@@ -21,10 +21,9 @@ const Header = () => {
           <Link to="#Services">Services</Link>
           <Link to="#banner">Banner</Link>
           <Link to={"/blogs"}>Blogs</Link>
-          <Link to={"/about"}>About</Link>
         </div>
         <div className="nav">
-          <Link to={"/registration"}>Registration</Link>
+          <Link to={"/about"}>About</Link>
           {user ? (
             <Link className="log-out" onClick={handleLogOut}>
               Log Out
